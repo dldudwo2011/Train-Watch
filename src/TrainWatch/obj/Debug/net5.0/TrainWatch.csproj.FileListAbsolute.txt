@@ -1,0 +1,60 @@
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.deps.json
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.pdb
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.AssemblyReference.cache
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfoInputs.cache
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfo.cs
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.CoreCompileInputs.cache
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.pdb
+C:\Users\skske\Desktop\src\TrainWatch\bin\Debug\net5.0\TrainWatch.deps.json
+C:\Users\skske\Desktop\src\TrainWatch\bin\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\src\TrainWatch\bin\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\src\TrainWatch\bin\Debug\net5.0\TrainWatch.pdb
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.AssemblyReference.cache
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfoInputs.cache
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfo.cs
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.CoreCompileInputs.cache
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\src\TrainWatch\obj\Debug\net5.0\TrainWatch.pdb
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.deps.json
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.pdb
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.AssemblyReference.cache
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfoInputs.cache
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfo.cs
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.CoreCompileInputs.cache
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.dll
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\ref\TrainWatch.dll
+C:\Users\skske\Desktop\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.pdb
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.deps.json
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\bin\Debug\net5.0\TrainWatch.pdb
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.AssemblyReference.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.GeneratedMSBuildEditorConfig.editorconfig
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfoInputs.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfo.cs
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.CoreCompileInputs.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\refint\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\TrainWatch.pdb
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\TrainWatch\obj\Debug\net5.0\ref\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\bin\Debug\net5.0\TrainWatch.deps.json
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\bin\Debug\net5.0\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\bin\Debug\net5.0\TrainWatch.pdb
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.AssemblyReference.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.GeneratedMSBuildEditorConfig.editorconfig
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfoInputs.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.AssemblyInfo.cs
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.csproj.CoreCompileInputs.cache
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\refint\TrainWatch.dll
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\TrainWatch.pdb
+D:\back up - 20220428\Nait courses\done spring term - 2021\CPSC1517\Assignment\git repos\take-home-exercises-may-2021-skske1432\src\src\TrainWatch\obj\Debug\net5.0\ref\TrainWatch.dll

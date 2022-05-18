@@ -1,0 +1,584 @@
+﻿@page
+@model MyApp.Namespace.SearchDatabaseModel
+@{
+}
+<h1>Search RailCar</h1>
+
+<p>There are @Model.TotalResults results for this page. You are on page # <b>@Model.Current</b> of <i>@Model.LastPage</i> pages, showing items @Model.FromItem to @Model.ToItem</p>
+
+<form method="post" style="margin-bottom:40px">
+
+    <div style="margin-bottom:40px">
+        <label for="SelectFiles" style="display:block">Select a paging size</label>
+
+        <select id="SelectFiles" asp-for="PageSize">
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="50">50</option>
+        </select>
+    </div>
+
+    <button type="submit" style="margin-bottom:40px">Refresh</button>
+</form>
+    
+<form method="get">
+    <div style="margin-bottom:40px">
+        <label for="PartialProductName" style="display:block">Partial Product Name</label>
+        <input id="PartialProductName" type="search" asp-for="PartialName">
+    </div>
+
+    <button type="submit" style="margin-bottom:40px">Filter Results</button>
+</form>
+
+<p style="margin-bottom:40px"><a href="/ManageRollingStock">Add RailCar</a></p>
+
+<table class="table table-hover">
+    <tr>
+        <td>Action</td>
+        <td>ReportingMark</td>
+        <td>Capacity</td>
+        <td>Owner</td>
+    </tr>
+    @{
+        if (Model.rollingStocks != null && Model.rollingStocks.Items != null)
+        {
+            foreach (var item in Model.rollingStocks.Items)
+            {
+                <tr>
+                    <td><a asp-page="/ManageRollingStock" asp-route-reportingMark="@item.ReportingMark">Edit</a></td>
+                    <td>@item.ReportingMark</td>
+                    <td>@item.Capacity</td>
+                    <td>@item.Owner</td>
+                </tr>
+            }
+        }
+            else
+            {
+                <p>No results found</p>
+            }
+
+
+    }
+
+    <tfoot>
+        <tr>
+            <td colspan="3">
+
+                @{
+                    if (Model.PageSize == 5)
+                    {
+                        <a title="First Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.FirstPage)" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)">&laquo;</a>
+                        <a title="Previous Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.PreviousPage)" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)">&lsaquo;</a>
+
+                        if (Model.LastPage < 5)
+                        {
+                            for (int counter = 1; counter <= Model.LastPageLink; counter++)
+                            {
+                                if (counter == Model.Current)
+                                {
+                                    <b>@counter</b>
+                                }
+                                else
+                                {
+                                    <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                }
+                            }
+                        }
+                        else if (Model.LastPage % 5 != 0)
+                        {
+                            int specialNumber = Model.LastPage - Model.lastDigit + 1;
+
+                            if (((Model.Current % 5) == 1))
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 5)
+                                {
+                                    first = 1;
+                                    last = 5;
+                                }
+                                else if (@Model.Current % 5 != 0 && @Model.Current > 5 && @Model.Current < specialNumber)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 5) + 1);
+                                    last = first + 4;
+                                }
+                                else if (@Model.Current >= specialNumber)
+                                {
+                                    first = specialNumber;
+                                    last = Model.LastPage;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 4;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if ((Model.Current % 5) == 1)
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 5)
+                                {
+                                    first = 1;
+                                    last = 5;
+                                }
+                                else if (@Model.Current % 5 != 0 && @Model.Current > 5)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 5)) + 1;
+                                    last = first + 4;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 4;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                        }
+                        <a title="Next Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.NextPage)" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)">&rsaquo;</a>
+                        <a title="Last Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.LastPage)" asp-route-pagesize="5" asp-route-partialname="@(Model.PartialName)">&raquo;</a>
+                    }
+                    else if (Model.PageSize == 10)
+                    {
+                        <a title="First Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.FirstPage)" asp-route-pagesize="10" asp-route-partialname="@(Model.PartialName)">&laquo;</a>
+                        <a title="Previous Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.PreviousPage)" asp-route-pagesize="10" asp-route-partialname="@(Model.PartialName)">&lsaquo;</a>
+                        if (Model.LastPage < 10)
+                        {
+                            for (int counter = 1; counter <= Model.LastPageLink; counter++)
+                            {
+                                if (counter == Model.Current)
+                                {
+                                    <b>@counter</b>
+                                }
+                                else
+                                {
+                                    <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="10" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                }
+                            }
+                        }
+                        else if (Model.LastPage % 10 != 0)
+                        {
+                            int specialNumber = Model.LastPage - Model.lastDigit + 1;
+
+                            if (((Model.Current % 10) == 1) && (Model.Current != specialNumber))
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 10)
+                                {
+                                    first = 1;
+                                    last = 10;
+                                }
+                                else if (@Model.Current % 10 != 0 && @Model.Current > 10 && @Model.Current < specialNumber)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 10)) + 1;
+                                    last = first + 9;
+                                }
+                                else if (@Model.Current >= specialNumber)
+                                {
+                                    first = specialNumber;
+                                    last = Model.LastPage;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 9;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if ((Model.Current % 10) == 1)
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="10" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 10)
+                                {
+                                    first = 1;
+                                    last = 10;
+                                }
+                                else if (@Model.Current % 10 != 0 && @Model.Current > 10)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 10)) + 1;
+                                    last = first + 9;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 9;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="10" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                        }
+                        <a title="Next Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.NextPage)" asp-route-PageSize="10" asp-route-partialname="@(Model.PartialName)">&rsaquo;</a>
+                        <a title="Last Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.LastPage)" asp-route-PageSize="10" asp-route-partialname="@(Model.PartialName)">&raquo;</a>
+                    }
+                    else if (Model.PageSize == 20)
+                    {
+                        <a title="First Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.FirstPage)" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)">&laquo;</a>
+                        <a title="Previous Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.PreviousPage)" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)">&lsaquo;</a>
+                        if (Model.LastPage < 20)
+                        {
+                            for (int counter = 1; counter <= Model.LastPageLink; counter++)
+                            {
+                                if (counter == Model.Current)
+                                {
+                                    <b>@counter</b>
+                                }
+                                else
+                                {
+                                    <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                }
+                            }
+                        }
+
+                        else if (Model.LastPage % 20 != 0)
+                        {
+                            int specialNumber = Model.LastPage - Model.lastDigit + 1;
+
+                            if (((Model.Current % 20) == 1))
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 20)
+                                {
+                                    first = 1;
+                                    last = 20;
+                                }
+                                else if (@Model.Current % 20 != 0 && @Model.Current > 20 && @Model.Current < specialNumber)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 20) + 1);
+                                    last = first + 19;
+                                }
+                                else if (@Model.Current >= specialNumber)
+                                {
+                                    first = specialNumber;
+                                    last = Model.LastPage;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 19;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if ((Model.Current % 20) == 1)
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 20)
+                                {
+                                    first = 1;
+                                    last = 20;
+                                }
+                                else if (@Model.Current % 20 != 0 && @Model.Current > 20)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 20)) + 1;
+                                    last = first + 19;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 19;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                        }
+                        <a title="Next Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.NextPage)" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)">&rsaquo;</a>
+                        <a title="Last Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.LastPage)" asp-route-pagesize="20" asp-route-partialname="@(Model.PartialName)">&raquo;</a>
+                    }
+                    else if (Model.PageSize == 50)
+                    {
+                        <a title="First Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.FirstPage)" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)">&laquo;</a>
+                        <a title="Previous Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.PreviousPage)" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)">&lsaquo;</a>
+                        if (Model.LastPage < 50)
+                        {
+                            for (int counter = 1; counter <= Model.LastPageLink; counter++)
+                            {
+                                if (counter == Model.Current)
+                                {
+                                    <b>@counter</b>
+                                }
+                                else
+                                {
+                                    <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                }
+                            }
+                        }
+                        else if (Model.LastPage % 50 != 0)
+                        {
+                            int specialNumber = Model.LastPage - Model.lastDigit + 1;
+
+                            if (((Model.Current % 50) == 1))
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 50)
+                                {
+                                    first = 1;
+                                    last = 50;
+                                }
+                                else if (@Model.Current % 50 != 0 && @Model.Current > 50 && @Model.Current < specialNumber)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 50) + 1);
+                                    last = first + 49;
+                                }
+                                else if (@Model.Current >= specialNumber)
+                                {
+                                    first = specialNumber;
+                                    last = Model.LastPage;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 49;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+
+                        }
+                        else
+                        {
+                            if ((Model.Current % 50) == 1)
+                            {
+                                for (var counter = Model.Current; counter <= Model.LastPageLink; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                            else
+                            {
+                                int first;
+                                int last;
+
+                                if (@Model.Current < 50)
+                                {
+                                    first = 1;
+                                    last = 50;
+                                }
+                                else if (@Model.Current % 50 != 0 && @Model.Current > 50)
+                                {
+                                    first = (@Model.Current - (@Model.Current % 50)) + 1;
+                                    last = first + 49;
+                                }
+                                else
+                                {
+                                    first = @Model.Current - 49;
+                                    last = @Model.Current;
+                                }
+                                for (var counter = first; counter <= last; counter++)
+                                {
+                                    if (counter == Model.Current)
+                                    {
+                                        <b>@counter</b>
+                                    }
+                                    else
+                                    {
+                                        <a asp-page="/SearchDatabase" asp-route-currentpage="@counter" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)"> @counter </a>
+                                    }
+                                }
+                            }
+                        }
+                        <a title="Next Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.NextPage)" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)">&rsaquo;</a>
+                        <a title="Last Page" asp-page="/SearchDatabase" asp-route-currentpage="@(Model.LastPage)" asp-route-pagesize="50" asp-route-partialname="@(Model.PartialName)">&raquo;</a>
+                    }
+                }
+            </td>
+        </tr>
+    </tfoot>
+
+</table>

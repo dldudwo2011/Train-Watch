@@ -1,0 +1,103 @@
+﻿@page "{reportingMark?}"
+@model MyApp.Namespace.ManageRollingStockModel
+@{
+}
+
+@section scripts{ 
+    <partial name="_ValidationScriptsPartial" />
+}
+
+<h1>Manage Rolling Stock</h1>
+
+<p><a href="/SearchDatabase">View Rolling Stock</a></p>
+
+@if (!string.IsNullOrEmpty(Model.ErrorMessage))
+{
+    <p style="color:red; font-weight: bold;">@Model.ErrorMessage</p>
+}
+
+<form method="get">
+    <div style="margin-bottom:40px">
+        <label>
+            Reporting Mark
+            <span asp-validation-for="rollingStock.ReportingMark" style="color:red;"></span>
+            <input id="ReportingMark" type="text" asp-for="rollingStock.ReportingMark">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            Owner
+            <span asp-validation-for="rollingStock.Owner" style="color:red;"></span>
+            <input id="Owner" type="text" asp-for="rollingStock.Owner">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            Light Weight
+            <span asp-validation-for="rollingStock.LightWeight" style="color:red;"></span>
+            <input id="LightWeight" type="number" asp-for="rollingStock.LightWeight">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            Load Limit
+            <span asp-validation-for="rollingStock.LoadLimit" style="color:red;"></span>
+            <input id="LoadLimit" type="number" asp-for="rollingStock.LoadLimit">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            Capacity
+            <span asp-validation-for="rollingStock.Capacity" style="color:red;"></span>
+            <input id="Capacity" type="number" asp-for="rollingStock.Capacity">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label for="SelectRailCarType" style="display:block">Rail Car Type ID</label>
+        <select id="SelectRailCarType" asp-items="Model.railCarType" asp-for="rollingStock.RailCarTypeID">
+            <option value="0">[Pick a RailCarType]</option>
+        </select>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label for="YearBuilt" style="display:block">Year Built</label>
+        <input id="YearBuilt" type="number" asp-for="rollingStock.YearBuilt">
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            In Service
+            <span asp-validation-for="rollingStock.InService" style="color:red;"></span>
+            <input id="InService" type="checkbox" asp-for="rollingStock.InService">
+        </label>
+    </div>
+
+    <div style="margin-bottom:40px">
+        <label>
+            Notes
+            <span asp-validation-for="rollingStock.Notes" style="color:red;"></span>
+            <textarea id="Notes" type="email" asp-for="rollingStock.Notes"></textarea>
+        </label>
+    </div>
+
+    <!-- added ""Model.redirected" because I wanted the user to continue adding after post-get-redirect. -->
+    @if (Model.rollingStock == null || Model.redirected == true)
+    {
+        <button type="submit" asp-page-handler="Add">Add RailCar</button>
+        <button type="submit" disabled>Update Product</button>
+        <button type="submit" disabled>Delete Product</button>
+    }
+
+    else
+    {
+        <button type="submit" disabled>Add RailCar</button>
+        <button type="submit" asp-page-handler="Update">Update Product</button>
+        <button type="submit" asp-page-handler="Delete" onclick="return confirm('Are you sure you want to delete this product?')">Delete Product</button>
+    }
+
+</form>

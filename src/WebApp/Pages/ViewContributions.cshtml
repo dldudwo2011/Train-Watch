@@ -1,0 +1,63 @@
+﻿@page
+@model MyApp.Namespace.ViewContributionsModel
+@{
+}
+
+<h1 style="margin-bottom:40px">View Contributions</h1>
+
+<form method="POST" style="margin-bottom:40px">
+
+    <div style="margin-bottom:40px">
+        <label for="SelectFile" style="display:block">Select a file</label>
+        <select id="SelectFile" asp-for="selectedFile">
+            
+                @foreach (var item in Model.currentFiles)
+            {
+                <option>@item.Name</option>
+            }
+            
+ 
+        </select>
+    </div>
+
+    <button type="submit" style="margin-bottom:40px">submit</button>
+</form>
+
+<p>@Model.nullMessage</p>
+
+@if (Model.data != null)
+            {
+<table class="table table-hover">
+
+    @{
+        foreach (var item in Model.data)
+        {
+            string[] parts = item.Split(",");
+
+            if (parts.Length == 7)
+            {
+        <tr>
+            <td>@parts[0]</td>
+            <td>@parts[1]</td>
+            <td>@parts[2]</td>
+            <td>@parts[3]</td>
+            <td>@parts[4]</td>
+            <td>@parts[5]</td>
+            <td>@parts[6]</td>
+        </tr>
+            }
+
+            else if (parts.Length == 3)
+            {
+                
+                <tr>
+                    <td>@parts[0]</td>
+                    <td>@parts[1]</td>
+                    <td>@parts[2]</td>
+                </tr>
+            }
+
+        }
+    }
+</table>
+            }

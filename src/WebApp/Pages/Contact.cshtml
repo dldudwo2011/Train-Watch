@@ -1,0 +1,60 @@
+@page
+@model ContactModel
+
+<div style="display:flex">
+    <div style="margin-right:200px">
+
+        <h1 style="margin-bottom:40px">Send a message</h1>
+
+        <form method="POST">
+            <div style="margin-bottom:40px">
+                <label for="user-email" style="display:block">User Email</label>
+                <input id="user-email" type="email" asp-for="UserEmail">
+            </div>
+
+            <div style="margin-bottom:40px">
+                <label for="Subject&Topic" style="display:block">Subject/Topic</label>
+                <select id="Subject&Topic" asp-for="SelectedTopic">
+                    <option>Contributing</option>
+                    <option>Request Membership</option>
+                    <option>Bug Report</option>
+                </select>
+            </div>
+
+            <div style="margin-bottom:40px">
+                <label for="message-title" style="display:block">Title</label>
+                <input id="message-title" type="text" asp-for="MessageTitle">
+            </div>
+
+            <div style="margin-bottom:40px">
+                <label for="message-body" style="display:block">Message</label>
+                <textarea id="message-body"></textarea>
+            </div>
+
+            <button type="submit">Send</button>
+        </form>
+
+        <p style="margin-top:40px">@Model.FeedbackMessage</p>
+    </div>
+
+    <div>
+        <h1 style="margin-bottom:40px">Upload a CSV file</h1>
+
+        <form method="POST" enctype="multipart/form-data">
+            <div style="margin-bottom:40px">
+                <label>Choose CSV File</label>
+                <input type="file" accept=".csv" asp-for="UserFile" required />
+            </div>
+
+            <div style="margin-bottom:40px">
+                <label for="agreement">I agree to the terms of contributions to this site.</label>
+                <input type="checkbox" id="agreement" required>
+            </div>
+
+            <button type="submit">Contribute</button>
+        </form>
+
+        <p style="margin-top:40px">@Model.ContributionMessage</p>
+    </div>
+</div>
+

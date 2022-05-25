@@ -7,7 +7,7 @@ This is a virtual website made with .NET 5 to do Query and CRUD Operation on var
 Please follow these steps to see my work working.
 
 1. Import the dacpac file (TrainWatch) in your SQL Server Studio Management.
-2. Run the server in visual studio with the src file provided and test the Query and CRUD functionality by clicking the Query (View Contribution) and CRUD (Manage Rolling Stock) tabs in the menu.
+2. Run the server in visual studio with the src file provided and test the Query and CRUD functionality by clicking the View Contribution (Query) and Manage Rolling (CRUD) tabs in the menu.
 3. In addition to Query and CRUD, you might be interested in exploring other tabs, such as Contact Us and View Contribution tab.
 
 This project demonstrates my ability to:

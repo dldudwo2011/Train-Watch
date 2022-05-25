@@ -1,4 +1,4 @@
-# TrainWatch
+# Train-Watch
 
 .NET5 - Query and CRUD functionality
 

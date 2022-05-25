@@ -15,5 +15,5 @@ This project demonstrates my ability to:
 - Query items from the database.
 - CRUD functionality with the database.
 - Implement pagination with the ability to select paging size.
-- Implement search by partial product name.
+- Implement filtered search by partial product name.
 - Allow users to send contact messages as well as upload a CSV file.
